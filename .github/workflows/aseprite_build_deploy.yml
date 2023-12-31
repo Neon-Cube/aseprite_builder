@@ -69,6 +69,8 @@ jobs:
     steps:
       - name: (Windows) Install dependencies
         if: matrix.os == 'windows-latest'
+        env: 
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
         uses: seanmiddleditch/gha-setup-ninja@v1
       - name: (Ubuntu) Install dependencies
         if: matrix.os == 'ubuntu-latest'
